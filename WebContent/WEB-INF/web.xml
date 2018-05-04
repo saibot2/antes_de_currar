@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+<display-name>SpringMVC</display-name>
+   
+ <servlet>    
+    <servlet-name>Control</servlet-name> 
+	<servlet-class> 
+	   org.springframework.web.servlet.DispatcherServlet
+	</servlet-class> 
+	<load-on-startup>1</load-on-startup> 
+ </servlet> 
+ 
+ <servlet-mapping> 
+    <servlet-name>Control</servlet-name> 
+	<url-pattern>*.html</url-pattern> 
+	<!-- esto es que en mis metodos o acciones tienen 
+	 que terminar en .html, es el tipo de petición que va a atender-->
+ </servlet-mapping> 
+
+
+<mime-mapping>
+    <extension>sub</extension>
+    <mime-type>application/json</mime-type>
+</mime-mapping>
+
+ <welcome-file-list>
+   	<welcome-file>principal.jsp</welcome-file>
+ </welcome-file-list>
+ 
+</web-app>

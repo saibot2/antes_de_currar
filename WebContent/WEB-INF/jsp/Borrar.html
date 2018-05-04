@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+
+var cuentaRepetidos = function(cadena){
+	var contadores = new Array(cadena.length);
+	// inicializo todos los elemento a cero
+	for(var i=0;i<contadores.length;i++){		
+		contadores[i]=0;
+	}	
+	
+	var numComparar = 0; //Este es un numero auxiliar que usamos para comparar con cada elemento del array
+
+	//Necesitamos 2 bucles anidados para la comparación
+	for(var i=0;i<cadena.length;i++){
+		numComparar=cadena[i];
+		for(var j=0;j<cadena.length;j++){
+			if(numComparar==cadena[j]){
+				contadores[j]=contadores[j]+1;
+			}
+		}
+	}
+	
+	for(var i=0;i<contadores.length;i++){		
+		console.log("El elemento "+i +" tiene "+(contadores[i]-1)+" repeticiones");
+	}	
+};
+
+//////////////////////////////////////////
+
+//var datoP = [2,5,4,8,9];
+
+var comprobarEscalera = function(datoP){
+	var escalera = new Array();
+
+	for(var i=0;i<datoP.length;i++){
+		escalera.push(datoP[i]);
+	}
+	escalera.sort(function(a,b){return a-b;});	
+	
+	for(var i=0;i<escalera.length-1;i++){
+		var valorActual = escalera[i];
+		var valorSiguiente = escalera[i+1];
+		if(valorActual!=valorSiguiente-1){						
+			return false; //No es escalera
+		}		
+	}	
+	return true; //Si es escalera
+};
+
+/////////////////////////////////////////
+
+var guadaP = new Array("a8","a10","a12","a11","a9");
+
+function cartasConSuit(cartasRecibidasP){
+	var cartasCompletas = new Array();
+	
+	for( var x =0; x< cartasRecibidasP.length; x++){
+		var suit = cartasRecibidasP[x].substring(0,1);
+		var number= cartasRecibidasP[x].substring(1,3);
+		cartasCompletas.push({"numero":number ,"palos":suit});
+	}
+	cartasCompletas.sort(function(a, b){return a.numero - b.numero});
+	return cartasCompletas;
+}
+
+var mismoPalo = function(palos){
+	var resultado = true;
+	for(var i=0; i<palos.length;i++){
+		var palo = palos[0];
+		if(palos[i]!==palo){
+			resultado=false;
+		}
+	}		
+	return resultado;
+};
+
+function comprobarEscaleraColor(cartasconS){
+			var cartasW = cartasConSuit(cartasconS);
+			var palos=new Array();   //Acumulo un array de solo palos
+			var numeros=new Array(); //Acumulo un array de solo los numeros
+
+			for(var i=0; i<cartasW.length;i++){
+				palos.push(cartasW[i].palos);
+				numeros.push(cartasW[i].numero);
+			}	
+
+			//Comprobar si es el mismo palo						
+			if(!mismoPalo(palos)){//Si no es mismo palo no miramos nada mas y salimos			
+				return false;
+			}else{
+				if(!comprobarEscalera(numeros)){//Comprobar si los numeros son consecutivos
+					return false;
+				}else{
+					return true;
+				}				
+			}					
+	}	
+
+	/*Llamada a la funcion*/	
+	if(comprobarEscaleraColor(guadaP)){
+		alert("Escalera de color");
+	}else{
+		alert("NO es Escalera de color");
+	}
+
+</script>
+
+</head>
+<!-- Aqui le pasas un array cualquiera de numeros "[0,1,2,3,4]" por parametro a la funcion cuentaRepetidos(cadena) -->
+<body >
+hola Alberto velasco
+</body>
+</html>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">   
+        
+   <context:component-scan base-package="dai.luis.controllers" />
+   <context:annotation-config/>
+
+<bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+    <!-- Turn off working out content type based on URL file extension, should fall back to looking at the Accept headers -->
+    <property name="favorPathExtension" value="false" />
+</bean>
+
+<mvc:resources mapping="/resources/**" location="/resources/" />
+
+	<!-- archivo de propiedades -->
+<!--     <context:property-placeholder location="/config.properties"/> -->
+   
+   <bean class="org.springframework.web.servlet.view.UrlBasedViewResolver"> 
+	  <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+	  <property name="prefix" value="/WEB-INF/jsp/"/>	 
+	  <property name="suffix" value=".jsp"/>	 
+   </bean>
+   
+   <!--Bean Para el archivo src/messages.properties --> 
+   <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+	  <property name="basename" value="messages"/>
+	  <property name="defaultEncoding" value="UTF-8" />
+   </bean>
+   
+   <bean id="jacksonMessageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"></bean>
+   <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+	    <property name="messageConverters">
+	        <list>
+	            <ref bean="jacksonMessageConverter"/>
+	        </list>
+	    </property>
+   </bean>
+      
+      
+     <bean
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
+	<mvc:annotation-driven/> 
+	
+      <bean id="Pregunta" class="dai.luis.view.PreguntaView"/>
+      <bean id="Persona" class="dai.luis.view.PersonaView"/>
+      
+      <bean id="AlmacenService" class="dai.luis.service.AlmacenService"/>
+      <bean id="ProductoService" class="dai.luis.service.ProductoService"/>
+      <bean id="PokerService" class="dai.luis.service.PokerService"/>
+ 
+	  <!-- OJO! fijate que toma la clase de su implementacio y NO de la interfaz -->
+      <bean id="ProductoInterface" class="dai.luis.bbdd.daoimpl.ProductoImpl"/>
+      <bean id="AlmacenInterface" class="dai.luis.bbdd.daoimpl.AlmacenImpl"/>
+      <bean id="PokerInterface" class="dai.luis.bbdd.daoimpl.PokerImpl"/>
+      
+      <bean id="MensajePrueba" class="dai.luis.beans.MensajePrueba"/>
+      <bean id="almacenBean" class="dai.luis.beans.AlmacenBean"/>
+      
+      
+      
+<!--    <bean id="perfilService" class="service.PerfilService"/> -->
+<!--    <bean id="candidaturaService" class="service.CandidaturaService"/> -->
+<!--    <bean id="curriculoService" class="service.CurriculoService"/> -->
+<!--    <bean id="empresaService" class="service.EmpresaService"/> -->
+<!--    <bean id="ofertaService" class="service.OfertaService"/> -->
+   
+<!--    <bean id="perfilValidator" class="validators.PerfilValidator"/> -->
+<!--    <bean id="empresaValidator" class="validators.EmpresaValidator"/> -->
+   
+<!--    <bean id="perfilImpl" class="bbdd.DAOimpl.PerfilImpl"/> -->
+   
+      
+</beans>

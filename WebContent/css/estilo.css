@@ -1,0 +1,242 @@
+BODY { 
+	  font-family: Abtecia Basic Sans Serif Font, verdana, arial, sans-serif; 
+	  /*font-size: 11pt;*/ 
+	  color: #000000;
+	  margin: 10px;
+	  padding: 13px;
+   
+}
+
+
+.centrar{
+	text-align: center;
+}
+
+.errorblock{
+	color: rgb(255,103,100);
+}
+
+.mensajeVerde{
+	color: rgb(0,200,150);
+}
+
+.fondoForm{	
+	background-color:rgb(255,255,255);
+	color: rgb(0,43,0);
+	/*margin: 10px;*/
+	border-radius: 5px;
+}
+
+.fondoFormPrivate{	
+	background-color:rgb(255,255,255);
+	color: rgb(0,43,0);
+	margin: 5px;
+	padding: 15px;
+	/*width:100%;
+	height: 100%;*/
+	border-radius: 5px;
+}
+
+.divHeader{
+	 background: #003366 url(/img/tec2.jpeg) ;
+	 background-size: contain;
+	 padding: .5em;
+}
+
+.contenedor{
+	background-color: #97B3CE;
+	margin-top: 0em;
+}
+.cajaNegra{
+	background-color: #000;	
+	width: 100%;
+	top:1000px;
+}
+
+.caja {
+	width: 60%;
+ 	margin: 0 auto;
+ 	background-color: #97B3CE;
+}
+
+.cajaPortada{
+ 	position: absolute;
+ 	top: 40%;
+ 	text-align: center;
+	background: #000 url(/img/nombre.png) no-repeat  center; 
+	background-size: contain;
+}
+
+#cargando{
+	display: none;
+	text-align: center;
+	position: absolute;
+ 	top: 40%;
+}
+
+.cajaTitulitosEntrar{	
+	font-size: 31pt;
+	text-align: center;
+}
+
+.cajaTitulitosAplicaciones{	
+	font-size: 15pt;
+	text-align: center;
+}
+
+.cajaTitulitosLinkedin{
+	font-size: 25pt;
+	text-align: center;
+}
+
+.cajaTitulitosContact{
+	font-size: 21pt;
+	text-align: center;
+}
+
+.cajaFoto{
+	color: #000;
+	padding: .5em;
+	background-color: #6F7E91;
+}
+
+.cajaAzulCLaro{
+	color: #000;
+	padding: .5em;
+	/*background-color: #E5E5E5;*/
+}
+
+.cajaOracle{
+	background: #000055 url(/img/fon2.jpg) fixed;
+	background-size: 100%;
+	padding: .5em;
+}
+.filaApliccionesPor{
+	background-color: #6E6E6E;
+	padding: .5em;
+}
+.cajaAplicciones{
+	background-color: #fff;
+	padding: .5em;
+}
+.cajaPorqueJava{
+	background-color: #6F7E91;
+	padding: .5em;
+}
+.cajaContactar{
+	background-color: #4F4F4F;
+	padding: .5em;
+}
+
+.cajaApretonManos{	
+	text-align: middle;
+	vertical-align: text-center;
+	/*padding: .2em;*/
+	background-color: #818D94;
+}
+
+.cajaContactarDentro{
+	background-color: #818D94;
+	padding: .5em;
+}
+.cajaUltimosTrab{
+	background-color: #999999;
+	padding: .5em;
+}
+
+.pie{
+	background-color: #666666;
+}
+.pieApliWeb{
+	color: #ccc;
+}
+
+/*A:link {COLOR: #fff; TEXT-DECORATION: none}
+A:visited {COLOR: #fff; TEXT-DECORATION: none}
+A:active {TEXT-DECORATION: none}
+A:hover { TEXT-DECORATION: underline} 
+ */
+ 
+/*hr {
+  height: 1px;
+  border: 0;
+  border-top: 1px dashed #999999;
+}*/
+
+input[type="text"] {   
+    margin-bottom: 3px;
+    background-color: #F7F4B9;
+}
+
+
+.titulo{	
+	font-weight: bold;
+	color:#fff;
+	text-shadow: 1px 1px 1px #000;	
+}
+.lista{
+		font-style: bold;
+		font-size: 1.3em;
+	  	width: 250px;
+}
+
+.contDiv {	 	 
+		padding: .1em;	  
+		color: rgb(0, 0, 0);		
+		border-radius: 3px;
+ }
+
+.bordeOscuro {
+   border-top: solid 2px #999999;
+   border-bottom: solid 2px #999999;
+   border-left: solid 1px #999999;
+   border-right: solid 1px #999999;
+}
+.bordeRedondo{	
+	background-color:#000055; 
+	color: rgb(255,255,255); 
+	margin: 10px;
+	border-radius: 5px;
+	text-align: left;	
+	border-top: solid 2px #999999;
+   border-bottom: solid 2px #999999;
+   border-left: solid 1px #999999;
+   border-right: solid 1px #999999;
+   padding: .1em;
+}
+.bordeRedondo2{
+	/*padding: .1em;*/	
+	background-color:#E5E5E5;	
+	color: rgb(0,43,0);
+	/*margin: 5px;*/
+	border-radius: 5px;
+	text-align: left;	
+}
+
+.btn{
+	margin: 8px;
+}
+.oculta{		
+	display: none;
+}
+.tabla {
+  border: 1px solid #ccc;
+ /* border-collapse: collapse;*/
+  
+  padding: 15px;
+  color: #000;
+}
+
+.tablaNormal {
+ /*border: 1px solid #6E6E6E;*/
+ 
+ border-collapse: collapse;
+}
+
+th.tablaNormal, td.tablaNormal {
+    border: 1px solid black;
+}
+.gris{
+	color:#E5E5E5;	
+}
+

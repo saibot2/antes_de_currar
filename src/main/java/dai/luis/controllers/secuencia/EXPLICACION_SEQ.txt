@@ -1,0 +1,13 @@
+EXPLICACI�N DE LA SECUENCIA:
+
+Esto es una forma de pasar variables sin tener que llevarlas a la session.
+En 'InicioController.java' vamos a pasar un mensaje a traves de 3 pagina y se ira incrementando dicho mensaje. 
+para ello usamos un bean 'MensajePrueba.java' que contiene el mensaje y lo inyectamos y lo vamos incrementando 
+y se retorna mediante:
+return new ModelAndView("secuencia/pag1", "mensaje", mensaje);
+
+Al ser @Autowired no pierde el set. por eso se incrementa. Debe ser porque 'MensajePrueba.java'
+no es singleton.
+
+PARA PROBAR ESTO ES ASÍ:
+http://localhost:8080/antesDeCurrar/pag1.html
