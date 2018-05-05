@@ -41,10 +41,8 @@ public class ProductoImplTest {
 		List<Producto> productosMock = mockProductosList();
 		when(productoInterface.buscaTodosProductos(anyInt(), Mockito.any(Session.class))).thenReturn(productosMock);
 		List<Producto> productos = productoService.listadoProductos(1);
-		
 		assertNotNull(productos);
 		assertEquals(1, productos.size());
-		
 		verify(productoInterface).buscaTodosProductos(anyInt(), Mockito.any(Session.class));
 	}
 	

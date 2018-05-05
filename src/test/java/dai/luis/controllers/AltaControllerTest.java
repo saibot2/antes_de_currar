@@ -51,19 +51,19 @@ public class AltaControllerTest extends AbstractControllerTest{
 	}
 	
 	
-	@Test(expected=Exception.class)
+	@Test//(expected=Exception.class)
 	public void testCrearAlmacen() throws Exception {
-//		when(almacenService.crearAlmacen(Mockito.any(Almacen.class))).thenReturn(Mockito.anyLong());
+		when(almacenService.crearAlmacen(Mockito.any(Almacen.class))).thenReturn(Mockito.anyLong());
 		
-		Exception ex = new Exception("Por motivos ajenos a Audatex, la obtención del bastidor y la fecha de matriculación mediante la matrícula no estará disponible temporalmente.");
-		
-		when(almacenService.crearAlmacen(Mockito.any(Almacen.class))).thenThrow(ex);
+		//Exception ex = new Exception("Por motivos ajenos a Audatex, la obtención del bastidor y la fecha de matriculación mediante la matrícula no estará disponible temporalmente.");
+		//when(almacenService.crearAlmacen(Mockito.any(Almacen.class))).thenThrow(ex);
 		getMockMvc().perform(post("/altaAlmacenes")
-				.param("idAlmacen", "1")//Estos param son los atributos del objeto Producto.				
+				.param("idAlmacen", "1")//Estos param son los atributos del objeto Almacen.				
 				.param("nombreAlmacen", "Almacen pelele")
 				.param("telefono", "555-555555")
 				.param("esActivo", "1")
 		);
+		
 		verify(almacenService).crearAlmacen(Mockito.any(Almacen.class));
 	}
 	
