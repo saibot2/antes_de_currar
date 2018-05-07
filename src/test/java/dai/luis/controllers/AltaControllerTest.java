@@ -38,8 +38,9 @@ public class AltaControllerTest extends AbstractControllerTest{
 	@Test
 	public void testAlmacenes() throws Exception {
 		/*Cualquiera de los dos métodos vale*/
-		//assertExpectedMAVGet("/almacenes", "almacen");		
-		getMockMvc().perform(get("/altaAlmacenes"));
+		System.out.println("hola");
+		assertExpectedMAVGet("/almacenes", "almacen");		
+//		getMockMvc().perform(get("/almacenes"));
 	}
 	
 	
